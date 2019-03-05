@@ -9,7 +9,7 @@ import {
 } from '@angular/fire/firestore';
 
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, first, map } from 'rxjs/operators';
 import { User } from './user.model';
 
 @Injectable({ providedIn: 'root' })
@@ -36,6 +36,11 @@ export class AuthService {
     const provider = new auth.GoogleAuthProvider();
     return this.oAuthLogin(provider);
   }
+
+  async getUser() {
+    return this.afAuth.authState.pipe(first()).toPromise();
+  }
+
 
   private async oAuthLogin(provider) {
     const credential = await this.afAuth.auth.signInWithPopup(provider);

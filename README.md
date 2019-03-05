@@ -1,17 +1,4 @@
-# Base | Angular + Firebase 
+# Stripe Elements & Checkout in Angular
 
-Foundation for Angular/Firebase lessons.
-
-- @angular/fire + Firebase
-- User Auth
-
-## Setup
-
-```
-git clone <this-repo>
-npm i
-ng s
-```
-
-
-Open `src/app/app.module.ts` and replace the `configPlaceholder` with your Firebase credentials 
+- [Stripe Elements in Angular Lesson](https://fireship.io/lessons/stripe-elements-angular/)
+- [Stripe Payments Master Course](https://fireship.io/courses/stripe-payments/)

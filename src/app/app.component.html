@@ -1,16 +1,35 @@
-<h1>Base</h1>
+<h1>My Store</h1>
 
 <div *ngIf="auth.user$ | async as user; else login">
-  <pre>
-    {{ user | json }}
-  </pre>  
+
+  <img [src]="user.photoURL" width="100">
   <hr>
   <button class="button" (click)="auth.signOut()">Sign Out</button>
-
 </div>
+
+
 
 <ng-template #login>
   <button class="button" (click)="auth.googleSignIn()">Login with Google</button>
 </ng-template>
+
+<hr>
+
+
+<div class="card"> 
+    <div class="card-image">
+      <img src="/assets/meat.jpg" width="400">
+    </div>
+  <div class="card-content">
+
+      
+
+
+      <!-- <app-checkout [amount]="2000" description="People Meat"></app-checkout> -->
+      <app-elements [amount]="2000" description="People Meat"></app-elements>
+      
+  </div>
+</div>
+
 
 <router-outlet></router-outlet>

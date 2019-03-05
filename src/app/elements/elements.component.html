@@ -1,0 +1,25 @@
+<form (submit)="handleForm($event)">
+  <div class="form-row">
+
+
+
+    <div id="card-element" #cardElement>
+      <!-- A Stripe Element will be inserted here. -->
+    </div>
+
+
+    <!-- Used to display Element errors. -->
+    <p class="has-text-danger">{{ cardErrors }}</p>
+  </div>
+
+  <hr>
+
+  <button class="button is-success">Buy for ${{ amount / 100 }}.00</button>
+</form>
+
+
+
+<div *ngIf="loading" class="notification is-info">Loading....</div>
+<pre *ngIf="confirmation" style="max-width: 500px;">
+  {{ confirmation | json }}
+</pre>
